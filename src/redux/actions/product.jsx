@@ -91,8 +91,7 @@ export const getAllProducts = () => async (dispatch) => {
       type: "getAllProductsRequest",
     });
 
-    const { data } = await axios.get(`${server}/product`)
-    console.log(data)
+    const { data } = await Woocommerce.getProducts();
     dispatch({
       type: "getAllProductsSuccess",
       payload: data,
